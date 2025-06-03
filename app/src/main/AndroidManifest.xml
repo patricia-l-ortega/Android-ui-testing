@@ -27,8 +27,19 @@
             android:exported="false"
             android:label="@string/title_activity_login_jetpack_compose"
             android:theme="@style/Theme.BrownbagSessionUiTesting" />
+
         <activity
-            android:name=".xmllayout.MainActivity"
+            android:name=".xmllayout.AddNoteActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <activity
+            android:name=".xmllayout.HomeXMLActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light"/>
+
+        <activity
+            android:name=".jetpackcompose.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.BrownbagSessionUiTesting">

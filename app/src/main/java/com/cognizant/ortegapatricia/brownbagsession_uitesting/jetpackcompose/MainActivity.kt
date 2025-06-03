@@ -1,4 +1,4 @@
-package com.cognizant.ortegapatricia.brownbagsession_uitesting.xmllayout
+package com.cognizant.ortegapatricia.brownbagsession_uitesting.jetpackcompose
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,8 +22,8 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.R
-import com.cognizant.ortegapatricia.brownbagsession_uitesting.jetpackcompose.LoginJetpackComposeActivity
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.utils.CornerRadius
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.xmllayout.LoginXMLActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

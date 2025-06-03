@@ -63,7 +63,7 @@ class LoginXMLActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
             }
             if (loginResult.success != null) {
-                startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, HomeXMLActivity::class.java))
                 finish()
             }
             setResult(Activity.RESULT_OK)
