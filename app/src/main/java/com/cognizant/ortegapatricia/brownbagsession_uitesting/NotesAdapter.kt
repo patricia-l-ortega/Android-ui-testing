@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelper
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NoteDatabaseHelper
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelperImpl
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.model.Note
 
 class NotesAdapter(private var notes: List<Note>, context: Context) :
     RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
-    private val db: NotesDatabaseHelper = NotesDatabaseHelper(context)
+    private val db: NoteDatabaseHelper = NotesDatabaseHelperImpl(context)
 
     class NoteViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)

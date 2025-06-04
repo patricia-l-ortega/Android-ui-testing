@@ -22,18 +22,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.R
-import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelper
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelperImpl
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.model.Note
 
 class HomeActivity : ComponentActivity() {
 
-    private lateinit var db: NotesDatabaseHelper
+    private lateinit var db: NotesDatabaseHelperImpl
     private val notes = mutableStateListOf<Note>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        db = NotesDatabaseHelper(this)
+        db = NotesDatabaseHelperImpl(this)
         notes.addAll(db.getAllNotes())
 
         setContent {
@@ -113,7 +113,7 @@ fun MyNotesView(
                 .align(Alignment.BottomEnd)
                 .padding(16.dp),
             containerColor = Color.Black,
-            shape = RoundedCornerShape(30.dp)
+            shape = RoundedCornerShape(30.dp),
         ) {
             Icon(
                 painter = painterResource(R.drawable.baseline_add_24),

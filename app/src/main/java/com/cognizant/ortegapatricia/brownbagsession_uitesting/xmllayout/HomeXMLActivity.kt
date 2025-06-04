@@ -3,17 +3,16 @@ package com.cognizant.ortegapatricia.brownbagsession_uitesting.xmllayout
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.NotesAdapter
-import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelper
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelperImpl
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.databinding.ActivityHomescreenBinding
 
 class HomeXMLActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomescreenBinding
-    private lateinit var db: NotesDatabaseHelper
+    private lateinit var db: NotesDatabaseHelperImpl
     private lateinit var notesAdapter: NotesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +25,7 @@ class HomeXMLActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        db = NotesDatabaseHelper(this)
+        db = NotesDatabaseHelperImpl(this)
         notesAdapter = NotesAdapter(db.getAllNotes(), this)
 
         binding.notesRecyclerView.layoutManager = LinearLayoutManager(this)

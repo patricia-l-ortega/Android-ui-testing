@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.model.Note
 
-class NotesDatabaseHelper(context: Context) : SQLiteOpenHelper(
+class NotesDatabaseHelperImpl(context: Context) : NoteDatabaseHelper, SQLiteOpenHelper(
     context,
     DATABASE_NAME,
     null,
@@ -24,7 +24,7 @@ class NotesDatabaseHelper(context: Context) : SQLiteOpenHelper(
         onCreate(db)
     }
 
-    fun insertNote(note: Note) {
+    override fun insertNote(note: Note) {
         val db = writableDatabase
         val values = ContentValues().apply {
             put(COLUMN_TITLE, note.title)
@@ -34,7 +34,7 @@ class NotesDatabaseHelper(context: Context) : SQLiteOpenHelper(
         db.close()
     }
 
-    fun getAllNotes(): List<Note> {
+    override fun getAllNotes(): List<Note> {
         val noteList = mutableListOf<Note>()
         val db = readableDatabase
         val query = "SELECT * FROM $TABLE_NAME"
@@ -53,7 +53,7 @@ class NotesDatabaseHelper(context: Context) : SQLiteOpenHelper(
         return noteList
     }
 
-    fun deleteNote(noteId: Int){
+    override fun deleteNote(noteId: Int){
         val db = writableDatabase
         val whereClause = "$COLUMN_ID = ?"
         val whereArgs = arrayOf(noteId.toString())

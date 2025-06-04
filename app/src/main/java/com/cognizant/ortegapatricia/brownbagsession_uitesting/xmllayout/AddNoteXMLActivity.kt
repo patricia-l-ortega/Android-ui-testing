@@ -4,16 +4,17 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.R
-import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelper
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatabaseHelperImpl
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.model.Note
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.databinding.ActivityAddNoteBinding
 
 class AddNoteXMLActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddNoteBinding
-    private lateinit var db: NotesDatabaseHelper
+    private lateinit var db: NotesDatabaseHelperImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,7 @@ class AddNoteXMLActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        db = NotesDatabaseHelper(this)
+        db = NotesDatabaseHelperImpl(this)
 
     }
 
@@ -41,7 +42,11 @@ class AddNoteXMLActivity : AppCompatActivity() {
                     finish()
                     Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(this, "Title and Content cannot be empty", Toast.LENGTH_SHORT).show()
+                    AlertDialog.Builder(this)
+                        .setTitle("")
+                        .setMessage("Title and Content cannot be empty")
+                        .setPositiveButton("Ok", null)
+                        .show()
                 }
                 true
             }
