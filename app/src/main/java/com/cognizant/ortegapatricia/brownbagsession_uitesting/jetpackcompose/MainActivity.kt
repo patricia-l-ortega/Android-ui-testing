@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.R
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.utils.CornerRadius
+import com.cognizant.ortegapatricia.brownbagsession_uitesting.xmllayout.HomeXMLActivity
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.xmllayout.LoginXMLActivity
 
 class MainActivity : ComponentActivity() {
@@ -50,7 +51,7 @@ fun UITestingView() {
             shape = RoundedCornerShape(CornerRadius.XS),
             colors = ButtonDefaults.buttonColors(colorResource(id = R.color.white)),
             border = BorderStroke(1.dp, colorResource(id = R.color.black)),
-            onClick = { context.startActivity(Intent(context, LoginJetpackComposeActivity::class.java)) }
+            onClick = { context.startActivity(Intent(context, HomeActivity::class.java)) }
         ) {
             Text(
                 text = "Jetpack Compose Layout",
@@ -64,7 +65,7 @@ fun UITestingView() {
             shape = RoundedCornerShape(CornerRadius.XS),
             colors = ButtonDefaults.buttonColors(colorResource(id = R.color.white)),
             border = BorderStroke(1.dp, colorResource(id = R.color.black)),
-            onClick = { context.startActivity(Intent(context, LoginXMLActivity::class.java)) }
+            onClick = { context.startActivity(Intent(context, HomeXMLActivity::class.java)) }
         ) {
             Text(
                 text = "XML Layout",

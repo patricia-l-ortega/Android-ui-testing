@@ -13,8 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -97,7 +97,7 @@ fun LoginJetpackComposeView(
             .fillMaxSize()
             .padding(top = 48.dp, start = 28.dp, end = 28.dp)
     ) {
-        TextField(
+        OutlinedTextField(
             value = username,
             onValueChange = {
                 username = it
@@ -107,7 +107,7 @@ fun LoginJetpackComposeView(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(28.dp))
-        TextField(
+        OutlinedTextField(
             value = password,
             onValueChange = {
                 password = it

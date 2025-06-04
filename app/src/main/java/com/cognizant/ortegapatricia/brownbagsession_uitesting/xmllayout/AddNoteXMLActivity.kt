@@ -10,7 +10,7 @@ import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.db.NotesDatab
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.data.model.Note
 import com.cognizant.ortegapatricia.brownbagsession_uitesting.databinding.ActivityAddNoteBinding
 
-class AddNoteActivity : AppCompatActivity() {
+class AddNoteXMLActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddNoteBinding
     private lateinit var db: NotesDatabaseHelper
@@ -34,10 +34,15 @@ class AddNoteActivity : AppCompatActivity() {
             R.id.action_save -> {
                 val title = binding.titleEditText.text.toString()
                 val content = binding.contentEditText.text.toString()
-                val note = Note(0, title, content)
-                db.insertNote(note)
-                finish()
-                Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show()
+
+                if (title.isNotBlank() && content.isNotBlank()) {
+                    val note = Note(0, title, content)
+                    db.insertNote(note)
+                    finish()
+                    Toast.makeText(this, "Note Saved", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Title and Content cannot be empty", Toast.LENGTH_SHORT).show()
+                }
                 true
             }
             android.R.id.home -> {
