@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Brownbag session - ui testing</string>
+    <string name="app_name">My Notes</string>
     <string name="title_activity_login_jetpack_compose">LoginJetpackComposeActivity</string>
     <string name="title_activity_login_xmlactivity">LoginXMLActivity</string>
     <string name="prompt_email">Username</string>
